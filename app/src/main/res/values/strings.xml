@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">POS出單機</string>
+    <string name="action_settings">設定</string>
+    <string name="hello_world">請填上出單機IP地址。</string>
+    <string name="inputIp">且輸入出單機的IP</string>
+    <string name="inPrinterIp">192.168.2.177</string>
+    <string name="conTest">連接測試</string>
+    <string name="printf">打印</string>
+    <string name="inputData">交易時間：2019-01-29</string>
+    <string name="log">Log...</string>
+    <string name="ipSubmit">確定</string>
+    <string name="ipAddress">192.168.2.177</string>
+
+
+</resources>

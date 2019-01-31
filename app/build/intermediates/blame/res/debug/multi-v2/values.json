@@ -1,0 +1,62 @@
+{
+    "logs": [
+        {
+            "outputFile": "D:\\xampp\\htdocs\\luke_workspace\\vc\\Example4WIFI\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "map": [
+                {
+                    "source": "D:\\xampp\\htdocs\\luke_workspace\\vc\\Example4WIFI\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "6,15",
+                        "startColumns": "4,4",
+                        "startOffsets": "191,522",
+                        "endLines": "12,17",
+                        "endColumns": "12,12",
+                        "endOffsets": "481,679"
+                    },
+                    "to": {
+                        "startLines": "15,22",
+                        "startColumns": "4,4",
+                        "startOffsets": "676,967",
+                        "endLines": "21,24",
+                        "endColumns": "12,12",
+                        "endOffsets": "962,1122"
+                    }
+                },
+                {
+                    "source": "D:\\xampp\\htdocs\\luke_workspace\\vc\\Example4WIFI\\app\\src\\main\\res\\values\\dimens.xml",
+                    "from": {
+                        "startLines": "3,4",
+                        "startColumns": "4,4",
+                        "startOffsets": "92,151",
+                        "endColumns": "57,55",
+                        "endOffsets": "145,202"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,113",
+                        "endColumns": "57,55",
+                        "endOffsets": "108,164"
+                    }
+                },
+                {
+                    "source": "D:\\xampp\\htdocs\\luke_workspace\\vc\\Example4WIFI\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "4,3,8,5,7,10,6,13,12,11,9",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "100,56,299,147,245,378,199,511,471,432,340",
+                        "endColumns": "46,43,40,51,53,53,45,51,39,38,37",
+                        "endOffsets": "142,95,335,194,294,427,240,558,506,466,373"
+                    },
+                    "to": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "169,216,260,301,353,407,461,507,559,599,638",
+                        "endColumns": "46,43,40,51,53,53,45,51,39,38,37",
+                        "endOffsets": "211,255,296,348,402,456,502,554,594,633,671"
+                    }
+                }
+            ]
+        }
+    ]
+}

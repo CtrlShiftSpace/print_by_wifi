@@ -1,0 +1,115 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:2:1-45:12
+	package
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:3:5-40
+		INJECTED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml
+		INJECTED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:5:5-30
+		INJECTED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml
+		INJECTED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:4:5-28
+		INJECTED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml
+		INJECTED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml
+uses-sdk
+ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:7:5-9:41
+INJECTED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:7:5-9:41
+INJECTED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:7:5-9:41
+INJECTED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:7:5-9:41
+INJECTED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:7:5-9:41
+	android:targetSdkVersion
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:9:9-38
+		INJECTED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml
+		INJECTED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:8:9-34
+		INJECTED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml
+		INJECTED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:10:2-71
+	android:name
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:10:19-68
+uses-permission#android.permission.BLUETOOTH
+ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:11:5-68
+	android:name
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:11:22-65
+uses-permission#android.permission.INTERNET
+ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:12:5-66
+	android:name
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:12:22-64
+application
+ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:13:5-36:19
+	android:label
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:16:9-41
+	android:icon
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:15:9-45
+	android:allowBackup
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:14:9-35
+	android:theme
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:17:9-40
+activity#net.xprinter.example4wifi.act.MainActivity
+ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:18:9-31:20
+	android:label
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:20:13-45
+	android:name
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:19:13-70
+intent-filter#action:name:android.intent.action.MAIN+action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+category:name:android.intent.category.LAUNCHER+data:host:pos.ezrun.com+data:scheme:m
+ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:21:13-30:29
+action#android.intent.action.MAIN
+ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:22:17-69
+	android:name
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:22:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:23:17-77
+	android:name
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:23:27-74
+action#android.intent.action.VIEW
+ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:25:17-69
+	android:name
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:25:25-66
+category#android.intent.category.DEFAULT
+ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:26:17-76
+	android:name
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:26:27-73
+category#android.intent.category.BROWSABLE
+ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:27:17-78
+	android:name
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:27:27-75
+data
+ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:28:17-29:46
+	android:host
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:28:23-51
+	android:scheme
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:29:25-43
+activity#net.xprinter.example4wifi.act.SettingActivity
+ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:32:9-35:20
+	android:label
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:34:13-45
+	android:name
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:33:13-73
+uses-permission#android.permission.CHANGE_NETWORK_STATE
+ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:37:2-38:23
+	android:name
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:37:19-73
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:39:5-40:23
+	android:name
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:39:22-73
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:41:5-42:23
+	android:name
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:41:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:43:5-44:23
+	android:name
+		ADDED from D:\xampp\htdocs\luke_workspace\vc\Example4WIFI\app\src\main\AndroidManifest.xml:43:22-73
