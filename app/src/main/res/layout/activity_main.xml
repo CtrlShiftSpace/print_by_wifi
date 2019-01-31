@@ -60,13 +60,22 @@
         android:text="開錢箱" />
 
     <Button
-        android:enabled="false"
         android:id="@+id/buttonCut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/buttonCash"
         android:layout_alignRight="@+id/buttonCash"
         android:layout_below="@+id/buttonCash"
+        android:enabled="false"
         android:text="切纸" />
+
+    <Button
+        android:id="@+id/buttonExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonCut"
+        android:layout_alignRight="@+id/buttonCut"
+        android:layout_below="@+id/buttonCut"
+        android:text="離開" />
 
 </RelativeLayout>

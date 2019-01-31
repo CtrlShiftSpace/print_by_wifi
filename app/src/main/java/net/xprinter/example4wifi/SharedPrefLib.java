@@ -10,10 +10,14 @@ public class SharedPrefLib{
     private Context context;
     private SharedPreferences preferences;
 
-    //construct
+    //construct,此處用多型
     public SharedPrefLib(Context argContext,EditText argText){
         context = argContext;
         mText = argText;
+        preferences = PreferenceManager.getDefaultSharedPreferences(context);
+    }
+    public SharedPrefLib(Context argContext){
+        context = argContext;
         preferences = PreferenceManager.getDefaultSharedPreferences(context);
     }
 

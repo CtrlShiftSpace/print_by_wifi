@@ -20,13 +20,14 @@ public final class R {
     public static final int btnSubmit=0x7f030001;
     public static final int buttonCash=0x7f030002;
     public static final int buttonCut=0x7f030003;
-    public static final int conTest=0x7f030004;
-    public static final int plInputIP=0x7f030005;
-    public static final int printerIp=0x7f030006;
-    public static final int printf=0x7f030007;
-    public static final int printfData=0x7f030008;
-    public static final int printfLog=0x7f030009;
-    public static final int textXPrinter=0x7f03000a;
+    public static final int buttonExit=0x7f030004;
+    public static final int conTest=0x7f030005;
+    public static final int plInputIP=0x7f030006;
+    public static final int printerIp=0x7f030007;
+    public static final int printf=0x7f030008;
+    public static final int printfData=0x7f030009;
+    public static final int printfLog=0x7f03000a;
+    public static final int textXPrinter=0x7f03000b;
   }
   public static final class layout {
     public static final int activity_main=0x7f040000;

@@ -1,6 +1,7 @@
 package net.xprinter.example4wifi.act;
 
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,9 +9,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import net.xprinter.example4wifi.CommandBytes;
 import net.xprinter.example4wifi.R;
+import net.xprinter.example4wifi.SharedPrefLib;
 import net.xprinter.example4wifi.Socketmanager;
 
 public class MainActivity extends BasicActivity {
@@ -18,6 +21,7 @@ public class MainActivity extends BasicActivity {
 	private Button buttonPf=null;
 	private Button buttonCash=null;
 	private Button buttonCut=null;
+	private Button buttonExit=null;
 	private EditText mTextIp=null;
 	private EditText mprintfData=null;
 	private EditText mprintfLog=null;
@@ -32,6 +36,7 @@ public class MainActivity extends BasicActivity {
 		buttonPf=(Button)findViewById(R.id.printf);
 		buttonCash=(Button)findViewById(R.id.buttonCash);
 		buttonCut=(Button)findViewById(R.id.buttonCut);
+		buttonExit=(Button)findViewById(R.id.buttonExit);
 		//mTextIp=(EditText)findViewById(R.id.printerIp);
 		mprintfData=(EditText)findViewById(R.id.printfData);
 		mprintfLog=(EditText)findViewById(R.id.printfLog);
@@ -40,16 +45,18 @@ public class MainActivity extends BasicActivity {
 		buttonPf.setOnClickListener(buttonListener);
 		buttonCash.setOnClickListener(buttonListener);
 		buttonCut.setOnClickListener(buttonListener);
+        buttonExit.setOnClickListener(buttonListener);
 		mSockManager=new Socketmanager(MainActivity.this);
-		ipAddress = getResources().getString(R.string.ipAddress);
+		SharedPrefLib settingSharePref = new SharedPrefLib(this.getApplicationContext());
+		ipAddress = settingSharePref.getStringData("savedIP");
 
 
 		Uri uri = getIntent().getData();
 		if(uri != null) {
 			//判斷傳送來的uri指令
 			String cmdUri = uri.getQueryParameter("cmdUri");
-			String test2 = uri.getQueryParameter("arg1");
-			mprintfData.setText(cmdUri);
+			//String test2 = uri.getQueryParameter("arg1");
+			//mprintfData.setText(cmdUri);
 			if (conTest(ipAddress)) {
 				PrintfLog("連接成功...");
 				buttonCon.setText("已連接...");
@@ -89,6 +96,7 @@ public class MainActivity extends BasicActivity {
 
 		@Override
 		public void onClick(View v) {
+			//Toast.makeText(this,"11",Toast.LENGTH_SHORT)
 			switch (v.getId()) {
 			case R.id.conTest:
 				//Connect to printer
@@ -146,6 +154,14 @@ public class MainActivity extends BasicActivity {
 				else {
 					PrintfLog("切紙失敗...");
 				}
+				break;
+			case R.id.buttonExit:
+				PrintfLog("離開...");
+				Intent homeIntent = new Intent(Intent.ACTION_MAIN);
+				homeIntent.addCategory( Intent.CATEGORY_HOME );
+				homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(homeIntent);
+
 				break;
 			default:
 				break;
