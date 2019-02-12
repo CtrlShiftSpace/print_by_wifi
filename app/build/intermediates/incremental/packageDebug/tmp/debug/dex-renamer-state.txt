@@ -1,4 +1,4 @@
-#Thu Jan 31 17:52:13 CST 2019
+#Tue Feb 12 15:58:33 CST 2019
 base.0=D\:\\xampp\\htdocs\\luke_workspace\\vc\\Example4WIFI\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex

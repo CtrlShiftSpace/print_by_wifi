@@ -1,9 +1,12 @@
 package net.xprinter.example4wifi.act;
 
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,6 +19,18 @@ import net.xprinter.example4wifi.R;
 import net.xprinter.example4wifi.SharedPrefLib;
 import net.xprinter.example4wifi.Socketmanager;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 public class MainActivity extends BasicActivity {
 	private Button buttonCon=null;
 	private Button buttonPf=null;
@@ -27,6 +42,8 @@ public class MainActivity extends BasicActivity {
 	private EditText mprintfLog=null;
 	private Socketmanager mSockManager;
 	private String ipAddress = null;
+	private ProgressDialog pd;
+	private String domainName = "http://erp015.ezrun.com.tw/pos/";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +67,6 @@ public class MainActivity extends BasicActivity {
 		SharedPrefLib settingSharePref = new SharedPrefLib(this.getApplicationContext());
 		ipAddress = settingSharePref.getStringData("savedIP");
 
-
 		Uri uri = getIntent().getData();
 		if(uri != null) {
 			//判斷傳送來的uri指令
@@ -72,15 +88,39 @@ public class MainActivity extends BasicActivity {
 					} else {
 						PrintfLog("打開失敗...");
 					}
-				}
+					PrintfLog("離開...");
+					Intent homeIntent = new Intent(Intent.ACTION_MAIN);
+					homeIntent.addCategory( Intent.CATEGORY_HOME );
+					homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					startActivity(homeIntent);
 
-			}
-			else {
+				}else{
+					if(cmdUri.equals("print")){
+						//列印單據指令
+						//POS單號
+						String posCode = uri.getQueryParameter("pos_code");
+						new JsonTask().execute(domainName+posCode+"/printing");
+					}
+				}
+			}else{
 				PrintfLog("連接失敗...");
 				buttonCon.setText("未連接...");
 				buttonPf.setEnabled(false);
 				buttonCash.setEnabled(false);
 				buttonCut.setEnabled(false);
+
+				//POS單號
+				//String posCode = "20190122006";
+				//String posCode = uri.getQueryParameter("pos_code");
+				//new JsonTask().execute(domainName+posCode+"/printing");
+
+				//列印完畢回到CHROME畫面
+				/*Intent intent = new Intent();
+				intent.setAction("android.intent.action.VIEW");
+				intent.setClassName("com.android.chrome","com.google.android.apps.chrome.Main");
+				//開啟的網頁
+				intent.setData(Uri.parse(domainName+"create"));
+				startActivity(intent);*/
 			}
 		}
 	}
@@ -90,6 +130,99 @@ public class MainActivity extends BasicActivity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
+	}
+
+	private class JsonTask extends AsyncTask<String, String, String> {
+
+		protected void onPreExecute() {
+			super.onPreExecute();
+
+			pd = new ProgressDialog(MainActivity.this);
+			pd.setMessage("Please wait");
+			pd.setCancelable(false);
+			pd.show();
+		}
+
+		protected String doInBackground(String... params) {
+
+
+			HttpURLConnection connection = null;
+			BufferedReader reader = null;
+
+			try {
+				URL url = new URL(params[0]);
+				connection = (HttpURLConnection) url.openConnection();
+				connection.connect();
+
+
+				InputStream stream = connection.getInputStream();
+
+				reader = new BufferedReader(new InputStreamReader(stream));
+
+				StringBuffer buffer = new StringBuffer();
+				String line = "";
+
+				while ((line = reader.readLine()) != null) {
+					buffer.append(line+"\n");
+					Log.d("Response: ", "> " + line);   //here u ll get whole response...... :-)
+
+				}
+
+				return buffer.toString();
+
+
+			} catch (MalformedURLException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			} finally {
+				if (connection != null) {
+					connection.disconnect();
+				}
+				try {
+					if (reader != null) {
+						reader.close();
+					}
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			return null;
+		}
+
+		@Override
+		protected void onPostExecute(String result) {
+			super.onPostExecute(result);
+			if (pd.isShowing()){
+				pd.dismiss();
+			}
+
+
+			try {
+				//將字串轉為json陣列格式
+				JSONArray jsonResults = new JSONArray(result);
+				//該陣列的總數
+
+				/*int jsonArrLength = jsonResults.length();
+				for(int i = 0; i < jsonArrLength ; i++){
+					//取得陣列中各個JSONObject
+					JSONObject jsonResult = jsonResults.getJSONObject(i);
+					Log.d("My App", jsonResult.get("name").toString());
+				}*/
+				//將資料庫收到的JSON資料送至列印函式
+				PrintBasedData(jsonResults);
+
+				//列印完畢回到CHROME畫面
+				Intent intent = new Intent();
+				intent.setAction("android.intent.action.VIEW");
+				intent.setClassName("com.android.chrome","com.google.android.apps.chrome.Main");
+				intent.setData(Uri.parse(domainName+"create"));
+				startActivity(intent);
+
+			} catch (Throwable t) {
+				Log.e("My App", "Could not parse malformed JSON: \"" + result + "\"");
+			}
+		}
 	}
 
 	class ButtonListener implements OnClickListener{
@@ -189,6 +322,29 @@ public class MainActivity extends BasicActivity {
 		else {
 			return false;
 		}				
+	}
+
+	public void PrintBasedData(JSONArray jsonPrints){
+		//send data to printer and print
+		try {
+			CommandBytes cmdBytes = new CommandBytes(jsonPrints);
+			cmdBytes.addHeader();
+			cmdBytes.addBody();
+			//cmdBytes.addBytes((mprintfData.getText().toString()).getBytes("GBK"));
+			if (PrintfData(cmdBytes.getBytes())) {
+				PrintfLog("打印成功...");
+			}
+			else {
+				PrintfLog("打印失敗...");
+				buttonPf.setEnabled(false);
+			}
+		} catch (JSONException je){
+			je.printStackTrace();
+			PrintfLog("格式轉換發生錯誤...");
+		} catch (Exception e) {
+			e.printStackTrace();
+			PrintfLog("數據發送錯誤...");
+		}
 	}
 
 	/**
